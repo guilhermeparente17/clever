@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ExternalLogin from '../../components/ExternalLogin/ExternalLogin'
 
 import {
@@ -25,14 +25,29 @@ import Facebook from '../../assets/images/facebook.png'
 import Label from '../../components/Label/Label'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import UserSelector from '../../redux/selectors'
+import { acessLogin, getUser } from '../../redux/ActionTypes/ActionTypes'
 
 
 const Login = () => {
-const users = useSelector(UserSelector.getUsers);
-console.log(users);
+    const users = useSelector(UserSelector.getUsers);
+    const accessLogin = useSelector(UserSelector.getAcessLogin);
+    const infoUser = useSelector(UserSelector.getUser);
+    const dispatch = useDispatch()
+    const [user, setUser] = useState({email: '', password: ''})
+    console.log(infoUser);
+    console.log(accessLogin);
 
+
+    const loginUser = (user) => {
+        users.forEach((us) => {
+            if (us.email === user.email && us.password === user.password){
+                dispatch(acessLogin(true));
+                dispatch(getUser(us));
+            }
+        })
+    }
 
   return (
     <LoginContainer>
@@ -53,9 +68,9 @@ console.log(users);
 
             <LoginForm>
                 <Label text={'E-mail'} />
-                <Input type={'text'} />
+                <Input type={'text'} value={user.email} onChange={e => setUser(prevState => ({...prevState, email: e.target.value}))} />
                 <Label text={'Password'} />
-                <Input type={'password'} />
+                <Input type={'password'} value={user.password} onChange={e => setUser(prevState => ({...prevState, password: e.target.value}))} />
                 <PasswordRules>Must be 8 characters at least</PasswordRules>
 
                 <LoginFormOptions>
@@ -66,7 +81,7 @@ console.log(users);
                     <LoginFormCreateAccount to='/cadastro'>Create Account</LoginFormCreateAccount>
                 </LoginFormOptions>
 
-                <Button text={'Sign in'} />
+                <Button onClick={() => loginUser(user)} text={'Sign in'} />
 
                 
             </LoginForm>
