@@ -3,18 +3,27 @@ import { Link } from 'react-router-dom'
 
 export const LoginContainer = styled.div`
     display: flex;
+    width: 100%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1200px){
+        
+    }
 `;
 
-export const LoginSection = styled.div`
+export const LoginSection = styled.section`
     width: 700px;
     height: 800px;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1200px){
+        margin-top: 30px;
+    }
 `;
 
 export const LoginTitle = styled.h1`
@@ -23,6 +32,10 @@ export const LoginTitle = styled.h1`
     color: #55546f;
     text-align: center;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 600px){
+        font-size: 35px;
+    }
 `;
 
 export const LoginExternalSection = styled.section`
@@ -42,6 +55,10 @@ export const LoginHr = styled.div`
     width: 200px;
     height: 0.1px;
     background-color: #CADBE0;
+
+    @media screen and (max-width: 600px){
+        width: 100px;
+    }
 `;
 
 export const LoginText = styled.span`
@@ -55,6 +72,12 @@ export const LoginForm = styled.div`
     width: 530px;
     display: flex;
     flex-direction: column;
+    transition: 0.2s ease-in-out;
+
+    @media screen and (max-width: 600px){
+        width: 300px;
+        transition: 0.2s ease-in-out;
+    }
 `;
 
 export const PasswordRules = styled.span`

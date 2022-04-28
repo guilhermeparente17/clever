@@ -27,22 +27,22 @@ const Cadastro = () => {
         </CadastroSubTitle>
 
         <CadastroForm>
-                <Label text={'Name'} />
-                <Input type={'text'} />
-                <Label text={'Age'} />
-                <Input type={'number'} />
-                <Label text={'E-mail'} />
-                <Input type={'email'} />
-                <Label text={'Address'} />
-                <Input type={'text'} />
-                <Label text={'Password'} />
-                <Input type={'password'} />
-                <PasswordRules>Must be 8 characters at least</PasswordRules>
-                <Label text={'Repeat Password'} />
-                <Input type={'password'} />
-                <PasswordRules>Must be 8 characters at least</PasswordRules>
+          <Label text={'Name'} />
+          <Input type={'text'} />
+          <Label text={'Age'} />
+          <Input type={'number'} />
+          <Label text={'E-mail'} />
+          <Input type={'email'} />
+          <Label text={'Address'} />
+          <Input type={'text'} />
+          <Label text={'Password'} />
+          <Input type={'password'} />
+          <PasswordRules>Must be 8 characters at least</PasswordRules>
+          <Label text={'Repeat Password'} />
+          <Input type={'password'} />
+          <PasswordRules>Must be 8 characters at least</PasswordRules>
 
-                <Button text={'Create Account'} />
+          <Button text={'Create Account'} />
         </CadastroForm>
 
         

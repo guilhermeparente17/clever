@@ -1,13 +1,18 @@
 import React from 'react'
 
 import {
-    SliderContainer
+    SliderContainer,
+    SliderImg,
+    SliderTitle
 } from './SliderElements'
+
+import Background from '../../assets/images/background.svg';
 
 const Slider = () => {
   return (
     <SliderContainer>
-        teste
+      <SliderTitle>Welcome to Clever</SliderTitle>
+        <SliderImg src={Background} />
     </SliderContainer>
   )
 }
