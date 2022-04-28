@@ -4,9 +4,9 @@ import {
     ButtonContainer
 } from './ButtonElements'
 
-const Button = ({ text }) => {
+const Button = ({ text, onClick, marginT }) => {
     return (
-        <ButtonContainer>
+        <ButtonContainer marginT={marginT} onClick={onClick}>
             {text}
         </ButtonContainer>
     )

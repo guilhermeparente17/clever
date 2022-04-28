@@ -25,8 +25,13 @@ import Facebook from '../../assets/images/facebook.png'
 import Label from '../../components/Label/Label'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
+import { useSelector } from 'react-redux'
+import UserSelector from '../../redux/selectors'
+
 
 const Login = () => {
+const users = useSelector(UserSelector.getUsers);
+console.log(users);
 
 
   return (

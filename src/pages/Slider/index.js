@@ -8,7 +8,9 @@ import {
 
 import Background from '../../assets/images/background.svg';
 
+
 const Slider = () => {
+
   return (
     <SliderContainer>
       <SliderTitle>Welcome to Clever</SliderTitle>

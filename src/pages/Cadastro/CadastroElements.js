@@ -21,6 +21,12 @@ export const CadastroTitle = styled.h1`
     font-weight: 700;
     color: #55546f;
     text-align: center;
+    transition: 0.2s ease-in-out;
+
+    @media screen and (max-width: 600px){
+        font-size: 30px;
+        transition: 0.2s ease-in-out;
+    }
 `;
 
 export const CadastroSubTitle = styled.div`
@@ -34,6 +40,13 @@ export const CadastroHr = styled.div`
     width: 200px;
     height: 0.1px;
     background-color: #CADBE0;
+    transition: 0.2s ease-in-out;
+
+
+    @media screen and (max-width: 600px){
+        width: 80px;
+        transition: 0.2s ease-in-out;
+    }
 `;
 
 export const CadastroText = styled.span`
@@ -44,7 +57,7 @@ export const CadastroText = styled.span`
 `;
 
 export const PasswordRules = styled.span`
-    color: #2c3648;
+    color: ${({color}) => color || '#2c3648'};
     font-size: 14px;
     font-weight: 400;
     margin-left: 5px;
@@ -55,4 +68,10 @@ export const CadastroForm = styled.div`
     width: 530px;
     display: flex;
     flex-direction: column;
+    transition: 0.2s ease-in-out;
+
+    @media screen and (max-width: 600px){
+        width: 300px;
+        transition: 0.2s ease-in-out;
+    }
 `;

@@ -12,6 +12,7 @@ export const ButtonContainer = styled.button`
     font-weight: 500;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    margin-top: ${({marginT}) => `${marginT}px` || ''};
 
     &:hover{
         background-color: #3D5ACC;

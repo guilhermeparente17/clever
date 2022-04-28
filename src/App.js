@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import GlobalStyle from './globalStyle';
-import Routes from './pages/Home';
+import Home from './pages/Home';
 import Slider from './pages/Slider';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
       <div style={{display: 'flex'}}>
         <Slider />
-        <Routes />
+        <Home />
       </div>
     </div>
   );

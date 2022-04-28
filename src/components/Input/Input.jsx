@@ -5,10 +5,10 @@ import {
     InputType
 } from './InputElements'
 
-const Input = ({ type }) => {
+const Input = ({ type, placeholder, onChange }) => {
     return (
         <InputContainer>
-            <InputType type={type} />
+            <InputType onChange={onChange} placeholder={placeholder} type={type} />
         </InputContainer>
     )
 }
