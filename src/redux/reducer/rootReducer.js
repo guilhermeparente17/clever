@@ -1,4 +1,5 @@
 import { ACCESS_LOGIN, ADD_USER, GET_USER } from "../actions";
+import {defineState} from 'redux-localstore'
 
 
 const initialState = {
@@ -6,6 +7,8 @@ const initialState = {
     accessLogin: false,
     user: {}
 }
+
+defineState(initialState)('rootReducer')
 
 const rootReducer = (state = initialState, {type, payload}) => {
     switch(type){

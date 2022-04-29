@@ -31,7 +31,6 @@ import { acessLogin, getUser } from '../../redux/ActionTypes/ActionTypes'
 
 
 const Login = () => {
-    const users = useSelector(UserSelector.getUsers);
     const accessLogin = useSelector(UserSelector.getAcessLogin);
     const infoUser = useSelector(UserSelector.getUser);
     const dispatch = useDispatch()
@@ -39,9 +38,14 @@ const Login = () => {
     console.log(infoUser);
     console.log(accessLogin);
 
+    const login = localStorage.getItem('reduxStore');
+    const loginJson = JSON.parse(login);
+
+    console.log(loginJson)
+
 
     const loginUser = (user) => {
-        users.forEach((us) => {
+        loginJson.users.forEach((us) => {
             if (us.email === user.email && us.password === user.password){
                 dispatch(acessLogin(true));
                 dispatch(getUser(us));
