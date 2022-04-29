@@ -68,9 +68,17 @@ const Login = () => {
 
             <LoginForm>
                 <Label text={'E-mail'} />
-                <Input type={'text'} value={user.email} onChange={e => setUser(prevState => ({...prevState, email: e.target.value}))} />
+                <Input 
+                    type={'text'} 
+                    value={user.email} 
+                    placeholder={'E-mail'}
+                    onChange={e => setUser(prevState => ({...prevState, email: e.target.value}))} />
                 <Label text={'Password'} />
-                <Input type={'password'} value={user.password} onChange={e => setUser(prevState => ({...prevState, password: e.target.value}))} />
+                <Input 
+                    type={'password'} 
+                    value={user.password} 
+                    placeholder={'Password'}
+                    onChange={e => setUser(prevState => ({...prevState, password: e.target.value}))} />
                 <PasswordRules>Must be 8 characters at least</PasswordRules>
 
                 <LoginFormOptions>

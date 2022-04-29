@@ -17,8 +17,8 @@ const Slider = () => {
 
   return (
     <SliderContainer accessLogin={accessLogin}>
-      {accessLogin ? <SliderTitle>Welcome {infoUser.name}</SliderTitle> : <SliderTitle>Welcome to Clever</SliderTitle>}
-        <SliderImg src={Background} />
+      {accessLogin ? <SliderTitle accessLogin={accessLogin}>Welcome {infoUser.name}</SliderTitle> : <SliderTitle accessLogin={accessLogin}>Welcome to Clever</SliderTitle>}
+        <SliderImg accessLogin={accessLogin} src={Background} />
     </SliderContainer>
   )
 }
