@@ -18,6 +18,8 @@ import {
 } from './CadastroElements'
 
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Cadastro = () => {
   const [user, setUser] = useState({name: '', age: '', email: '', address: '', password: '', repeatPassword: ''})
@@ -89,10 +91,12 @@ const Cadastro = () => {
         if (checkName && checkAge && checkEmail && checkPassword){
           dispatch(addUser(user));
           history('/');
+          toast.success('User created successfully');
         }
     } catch (error) {
       console.log(error.reponse);
       console.log('criação de usuario com erro');
+      toast.error('Invalid data, test again');
     }
 
   }

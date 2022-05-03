@@ -28,6 +28,9 @@ import Button from '../../components/Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import UserSelector from '../../redux/selectors'
 import { acessLogin, getUser } from '../../redux/ActionTypes/ActionTypes'
+import { ToastContainer } from 'react-toastify'
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -49,6 +52,7 @@ const Login = () => {
             if (us.email === user.email && us.password === user.password){
                 dispatch(acessLogin(true));
                 dispatch(getUser(us));
+                toast.success(`Welcome ${us.name}`);
             }
         })
     }
@@ -99,6 +103,7 @@ const Login = () => {
             </LoginForm>
             <LoginReserverd>@2021 All Rights Reserved</LoginReserverd>
         </LoginSection>
+        <ToastContainer />
     </LoginContainer>
   )
 }
